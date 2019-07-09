@@ -8,7 +8,7 @@ import wx
 class bucky(wx.Frame):
 
     def __init__(self, parent, id):
-        wx.Frame.__init__(self, parent, id, '反混淆 v1.0', size=(350, 280),
+        wx.Frame.__init__(self, parent, id, '反混淆 v1.2', size=(350, 280),
                           style=wx.CAPTION | wx.MINIMIZE_BOX | wx.CLOSE_BOX | wx.SYSTEM_MENU | wx.STAY_ON_TOP)
 
         panel = wx.Panel(self)
