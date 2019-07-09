@@ -1,5 +1,6 @@
 import csv
 import webbrowser
+import pyperclip
 
 import wx
 
@@ -65,8 +66,10 @@ class bucky(wx.Frame):
                 data = row
                 searge = data[self.keyword]
                 if searge == self.target:
-                    print(data['name'])
-                    self.trueName.SetValue(data['name'])
+                    mcpName = data['name']
+                    print(mcpName)
+                    self.trueName.SetValue(mcpName)
+                    pyperclip.copy(mcpName)
                     flag = True
 
         return flag
