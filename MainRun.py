@@ -51,20 +51,20 @@ class bucky(wx.Frame):
     def onSearch(self, e):
         self.target = self.seargeinput.GetValue()
 
-        if self.searchInFile(self.filename[0]):
+        if self.searchInFile(self.filename[0], 'searge'):
             self.rbox.SetSelection(0)
-        elif self.searchInFile(self.filename[1]):
+        elif self.searchInFile(self.filename[1], 'searge'):
             self.rbox.SetSelection(1)
-        elif self.searchInFile(self.filename[2]):
+        elif self.searchInFile(self.filename[2], 'param'):
             self.rbox.SetSelection(2)
 
-    def searchInFile(self, file):
+    def searchInFile(self, file, KEY):
         flag = False
         with open(file, newline="\n") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 data = row
-                searge = data[self.keyword]
+                searge = data[KEY]
                 if searge == self.target:
                     mcpName = data['name']
                     print(mcpName)
